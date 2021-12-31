@@ -9,6 +9,7 @@ import cv2
 
 class CamApp(App):
 
+
     def build(self):
         self.img1=Image()
         layout = BoxLayout()
