@@ -1,0 +1,54 @@
+#:import layout_examples layout_examples
+#:import widget_examples widget_examples
+#:import navigation_screen_manager navigation_screen_manager
+#:import boxlayout_with_action_bar boxlayout_with_action_bar
+#:import canvas_examples canvas_examples
+
+<MainMenu@BoxLayout>:
+    # Layouts
+    # Widgets
+    # Images
+    orientation: "vertical"
+    Button:
+        text: "Layouts"
+        on_press: app.manager.push("LayoutsExampleTabs")
+    Button:
+        text: "Widgets"
+        on_press: app.manager.push("WidgetsExample")
+    Button:
+        text: "Images"
+        on_press: app.manager.push("ImagesExample")
+    Button:
+        text: "Canvas"
+        on_press: app.manager.push("CanvasExampleTabs")
+
+MyScreenManager:
+
+<MyScreenManager>:
+
+    Screen:
+        name: "main_menu"
+        MainMenu
+    Screen:
+        name: "LayoutsExampleTabs"
+        BoxLayoutWithActionBar:
+            title: "Layouts"
+            LayoutExamplesTabs
+
+    Screen:
+        name: "WidgetsExample"
+        BoxLayoutWithActionBar:
+            title: "Widgets"
+            WidgetsExample
+
+    Screen:
+        name: "ImagesExample"
+        BoxLayoutWithActionBar:
+            title: "Images"
+            ImagesExample
+
+    Screen:
+        name: "CanvasExampleTabs"
+        BoxLayoutWithActionBar:
+            title: "Canvas"
+            CanvasExampleTabs
